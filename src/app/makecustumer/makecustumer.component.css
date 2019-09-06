@@ -1,0 +1,20 @@
+.form-container{
+    width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 50px;
+    -webkit-box-shadow: 10px 10px 90px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 90px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 90px 0px rgba(0,0,0,0.75); 
+}
+
+.title-container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.title-container h1{
+    color: white;
+}
+
+

@@ -1,0 +1,59 @@
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "civilité": { 
+      "type": "string",
+      "enum": ["Homme", "Femme"]
+    },
+    "nom": {
+      "type": "string"
+    },
+    "prénom": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "téléphone": {
+      "type": "number"
+    },
+    "date de naissance": {
+      "type": "string",
+      "format": "date"
+    },
+    "pays": {
+      "type": "string",
+      "enum": ["s","p"]
+
+    },
+    "ville": {
+      "type": "string",
+      "enum": ["s","p"],
+      "inline": true
+    },
+    "rue": {
+      "type": "string",
+      "inline": true
+    },
+    "numéro": {
+      "type": "number",
+      "inline": true
+    },
+    "code postal": {
+      "type": "number",
+      "inline": true
+    }
+
+  },
+  "required": [
+    "civilité",
+    "nom",
+    "prénom",
+    "email",
+    "téléphone",
+    "date de naissance"
+  ]
+}
