@@ -8,4 +8,16 @@
     -moz-box-shadow: 10px 10px 90px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 90px 0px rgba(0,0,0,0.75); 
 }
+ .table{
+    text-align: center;
+    font-size: 20px;
+ }
 
+ .table tr:hover{
+    font-size: 30px;
+    color: hotpink;
+ }
+
+ .table td{
+    border-right: 1px solid hotpink;
+}

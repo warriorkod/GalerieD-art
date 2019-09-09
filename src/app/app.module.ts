@@ -13,10 +13,10 @@ import { SharedmoduleModule } from './sharedmodule/sharedmodule.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedmoduleModule
+    SharedmoduleModule,
     
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

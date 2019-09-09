@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SERVER_URL: 'https://restcountries-v1.p.rapidapi.com/all',
+  X_API_KEY: 'fa8116cd76msh381cd916f33a54bp12ee22jsn8ce66643fe31',
 };
 
 /*
