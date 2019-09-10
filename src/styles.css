@@ -41,6 +41,12 @@
   .toolbar img {
     margin: 0 16px;
   }
+  .toolbar .fa-smile-o {
+    margin: 0 16px;
+  }
+  .toolbar li {
+    list-style-type: none;
+ }
 
   .toolbar #twitter-logo {
     height: 40px;

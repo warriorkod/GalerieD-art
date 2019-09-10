@@ -20,6 +20,6 @@ a:active {
 }
 
 /* selected link */
-active {
-  color: blue;
-}
+a.active {
+  color: hotpink;
+  font-size: 25px;}

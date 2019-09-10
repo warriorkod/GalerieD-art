@@ -9,7 +9,7 @@ export interface customer {
     telephone: number;
     ville: string;
     rue: string;
-    numero: string;
+    numero: number;
     code_postal: string;
   }
   
