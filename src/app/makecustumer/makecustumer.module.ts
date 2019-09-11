@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { MakecustumerRoutingModule } from './makecustumer-routing.module';
 import { MakecustumerComponent } from './makecustumer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedmoduleModule } from '../sharedmodule/sharedmodule.module';
 import { ApiService } from 'src/services/apiservice.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,7 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     MakecustumerRoutingModule,
     HttpClientModule,
-    SharedmoduleModule,
     FormsModule,
     ReactiveFormsModule
   ],

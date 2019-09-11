@@ -5,8 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren : () => import('./makecustumer/makecustumer.module').then(m => m.MakecustumerModule), 
-  },
+    redirectTo: 'makecustomer',
+    pathMatch: 'full'
+    },
   { 
     path: 'makecustomer',
     loadChildren : () => import('./makecustumer/makecustumer.module').then(m => m.MakecustumerModule), 

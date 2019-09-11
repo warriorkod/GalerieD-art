@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   SERVER_URL: 'https://restcountries-v1.p.rapidapi.com/all',
+  SERVER_URL1: 'http://127.0.0.1:8081/api/person',
   X_API_KEY: 'fa8116cd76msh381cd916f33a54bp12ee22jsn8ce66643fe31',
 };
 

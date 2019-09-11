@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable, of } from "rxjs";
 import { customer } from 'src/models/customer';
+import { environment } from '../../environments/environment';
+import { ApiService } from 'src/services/apiservice.service';
 
 
 @Component({
@@ -12,28 +14,8 @@ export class ViewcustomerComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   subscription: any;
-  customers: customer[] = [
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-    { "civilite": "Homme", "nom": "kane", "pays": "Sénégal", "prenom": "Abdoulaye", "date_naissance": "05/01/2019","email": "abdoulaye.kane093@gmail.com", "telephone": 776746649, "ville": "Dakar", "rue": "DADODO", "numero": 22, "code_postal": "BP626"},
-
-  ];
-  constructor() { }
+  customers: customer[];
+  constructor( private apiservice: ApiService) { }
 
   ngOnInit() {
     this.dtOptions = {
@@ -41,6 +23,10 @@ export class ViewcustomerComponent implements OnInit {
       retrieve: true,
       paging: true,
       info: true
-    }; 
+    };
+    this.apiservice.getRequest(environment.SERVER_URL1, false).subscribe(value => {
+      this.customers = value['content'];
+      this.dtTrigger.next();
+  }); 
   }
 }

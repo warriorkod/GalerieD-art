@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { ApiService } from 'src/services/apiservice.service';
+  import { ApiService } from 'src/services/apiservice.service';
 import { environment } from '../../environments/environment';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { customer } from '../../models/customer';
-import { Observable } from 'rxjs';
+
 
 
 
@@ -66,23 +64,18 @@ export class MakecustumerComponent implements OnInit {
   };
 
 
-  constructor(private http: HttpClient, private apiservice: ApiService) {
+  constructor( private apiservice: ApiService) {
     this.buildCustomerForm();
    }
 
   ngOnInit() {
-    const schemaURL = `../../assets/schemas/customer.json`;
-    this.http.get(schemaURL, { responseType: 'text' })
-      .subscribe(schema => {
-        this.jsonFormObject = JSON.parse(schema);
-      });
     this.apiservice.getRequest(environment.SERVER_URL).subscribe(value => {
                 this.countries = value;
-                console.log(this.countries);
             });
   }
 
   submitForm(data) {
+
 
   }
   buildCustomerForm() {
@@ -126,6 +119,7 @@ export class MakecustumerComponent implements OnInit {
   }
 
   onCreateNewCustomer(customer){
+    console.log(customer);
     let flag = false;
     if (customer.civilite == '') {
       this.formErrors['civilite'] = this.validationMessages['civilite'].required;
@@ -153,6 +147,16 @@ export class MakecustumerComponent implements OnInit {
     }
     if (flag) {
       return;
+    }else{
+      this.apiservice.postRequest(environment.SERVER_URL1, customer).subscribe(
+        (res)=>{
+          // console.log('success');
+          alert('Client enregistré avec succés !');
+        },
+        err=>{
+          console.log(" Error..");
+        }
+    );;
     }
   }
 
