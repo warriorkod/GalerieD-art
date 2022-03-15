@@ -29,7 +29,7 @@
     "datatables.net-dt": "^1.10.19",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "material": "^0.3.13",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
